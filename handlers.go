@@ -150,12 +150,13 @@ func RemoveBasketProductFromBasket(c *fiber.Ctx) error{
 	}
 	delete(basketProducts,productId)
 
+	basketCount.Value -= basketProductToRemove.Count
 	return c.JSON(basketProductToRemove)
 }
 func ClearAllBasket(c *fiber.Ctx) error{
 	basketProductsToSendBeforeDelete := basketProducts.TransformToSlice()
 	basketProducts.Clear()
-
+	basketCount.Value = 0
 	return c.JSON(basketProductsToSendBeforeDelete)
 }
 func GetBasketCount(c *fiber.Ctx) error{

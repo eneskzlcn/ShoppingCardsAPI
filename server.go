@@ -24,5 +24,6 @@ func CreateAndStartServer(port int) error{
 	app := CreateShoppingCardServerWithGivenHandlers(shoppingCardsHandlers)
 	app.Static("/","./public")
 	err := app.Listen(fmt.Sprintf(":%d",port))
+	app.Shutdown()
 	return err
 }
