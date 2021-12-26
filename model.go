@@ -42,7 +42,7 @@ func(p Products) Init(){
 		ProductName: "ASUS MG- Laptop",
 		ProductPrice: "10500",
 		ProductCategory: categories[Technology],
-		ProductImageSource: "static/asus.jpeg",
+		ProductImageSource: "img/asus.jpeg",
 	}
 	p[1] = Product{
 		ProductId: 1,
@@ -50,7 +50,7 @@ func(p Products) Init(){
 		ProductName: "iPhone 11",
 		ProductPrice: "10500",
 		ProductCategory: categories[Technology],
-		ProductImageSource: "static/iphone.jpeg",
+		ProductImageSource: "img/iphone.jpeg",
 	}
 	p[2] = Product{
 		ProductId: 2,
@@ -58,7 +58,7 @@ func(p Products) Init(){
 		ProductName: "Smart Bag",
 		ProductPrice: "500",
 		ProductCategory: categories[Accessory],
-		ProductImageSource: "static/iphone.jpeg",
+		ProductImageSource: "img/iphone.jpeg",
 	}
 	p[3] = Product{
 		ProductId: 3,
@@ -66,7 +66,7 @@ func(p Products) Init(){
 		ProductName: "Sony LCD-TV",
 		ProductPrice: "15000",
 		ProductCategory: categories[Technology],
-		ProductImageSource: "static/sony.jpeg",
+		ProductImageSource: "img/sony.jpeg",
 	}
 	p[4] = Product{
 		ProductId: 4,
@@ -74,7 +74,7 @@ func(p Products) Init(){
 		ProductName: "T-Shirt",
 		ProductPrice: "50",
 		ProductCategory: categories[Clothes],
-		ProductImageSource: "static/tshirt.jpeg",
+		ProductImageSource: "img/tshirt.jpeg",
 	}
 }
 func (p Products) TransformToSlice() []Product{
