@@ -62,7 +62,7 @@ func(handlers ShoppingCardsHandlers) Init(){
 		Method: http.MethodGet,
 	}
 	handlers[DECREASE_COUNT_OF_A_BASKET_PRODUCT] = Handler{
-		Route:    "/add",
+		Route:    "/basket/:id/decrease",
 		Function: DecreaseCountOfABasketProduct,
 		Method: http.MethodGet,
 	}
@@ -84,7 +84,7 @@ func(handlers ShoppingCardsHandlers) Init(){
 }
 
 func GetAllProducts(c *fiber.Ctx) error{
-	return c.JSON(products)
+	return c.JSON(products.TransformToSlice())
 }
 func GetProductById(c *fiber.Ctx) error{
 	productId,err := c.ParamsInt("id")
@@ -95,7 +95,7 @@ func GetProductById(c *fiber.Ctx) error{
 	return c.JSON(product)
 }
 func GetBasketProducts(c *fiber.Ctx) error{
-	return c.JSON(basketProducts)
+	return c.JSON(basketProducts.TransformToSlice())
 }
 func AddProductToBasket(c *fiber.Ctx) error{
 	var product Product
@@ -153,7 +153,7 @@ func RemoveBasketProductFromBasket(c *fiber.Ctx) error{
 	return c.JSON(basketProductToRemove)
 }
 func ClearAllBasket(c *fiber.Ctx) error{
-	basketProductsToSendBeforeDelete := basketProducts.Copy()
+	basketProductsToSendBeforeDelete := basketProducts.TransformToSlice()
 	basketProducts.Clear()
 
 	return c.JSON(basketProductsToSendBeforeDelete)

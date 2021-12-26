@@ -77,7 +77,13 @@ func(p Products) Init(){
 		ProductImageSource: "static/tshirt.jpeg",
 	}
 }
-
+func (p Products) TransformToSlice() []Product{
+	var productSlice = []Product{}
+	for _, product := range p {
+		productSlice = append(productSlice,product)
+	}
+	return productSlice
+}
 func(p Products) Clear(){
 	//p = map[int]Product{}
 	for k := range p {
@@ -106,6 +112,13 @@ func(bp BasketProducts) Copy() map[int]BasketProduct {
 		copiedBasketProduct[index] = element
 	}
 	return copiedBasketProduct
+}
+func(bp BasketProducts) TransformToSlice() []BasketProduct{
+	var basketProductSlice = []BasketProduct{}
+	for _,basketProduct := range bp {
+		basketProductSlice = append(basketProductSlice,basketProduct)
+	}
+	return basketProductSlice
 }
 var basketProducts = BasketProducts{}
 
