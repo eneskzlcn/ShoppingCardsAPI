@@ -2,6 +2,6 @@ package main
 
 
 func main(){
-	CreateAndStartServer(4002)
+	CreateAndStartServer(4006)
 
 }
