@@ -18,4 +18,4 @@ log/
 # Dependency directories (remove the comment below to include it)
 # vendor/
 * Jet brains ide..
-idea/
+.idea/
