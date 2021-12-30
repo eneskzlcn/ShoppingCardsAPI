@@ -14,12 +14,12 @@ func CreateShoppingCardServerWithGivenHandlers(handlers ShoppingCardsHandlers) *
 		app.Add(handler.Method,handler.Route,handler.Function)
 	}
 	return app
+
 }
 
 
 func CreateAndStartServer(port int) error{
 	InitializeModels()
-
 	InitializeHandlers()
 	app := CreateShoppingCardServerWithGivenHandlers(shoppingCardsHandlers)
 	app.Static("/","./public")

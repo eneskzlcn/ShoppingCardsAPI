@@ -105,6 +105,7 @@ func (s * Settings) Init(){
 }
 func TestProvider(t *testing.T){
 	port,_ := utils.GetFreePort()
+
 	go CreateAndStartServer(port)
 
 	settings :=	Settings{}

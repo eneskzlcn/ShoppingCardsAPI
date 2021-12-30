@@ -7,7 +7,7 @@ import (
 )
 
 
-
+// Coul be better ?
 // HandlerType is an enum to represent a specific handler type instead of using string names to reach.
 type HandlerType int
 // constants of type HandlerType

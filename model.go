@@ -17,6 +17,7 @@ func(c Categories) Init(){
 	c[Accessory] = "Accessory"
 	c[Clothes] = "Clothes"
 }
+
 var categories = Categories{}
 
 // PRODUCT DEFINITION
